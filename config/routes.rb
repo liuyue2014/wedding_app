@@ -1,4 +1,39 @@
+WeddingApp::Application.routes.draw do
+  get 'user/new'
+
+  get 'user/girls'
+
+  get 'user/boys'
+
+  root to: 'pages#home'
+  match '/picture', to: 'pages#picture', via: 'get'
+  match '/invite', to: 'pages#invite', via: 'get'
+  match '/wishes', to: 'pages#wishes', via: 'get'
+  match '/feedback', to: 'pages#feedback', via: 'get'
+  match '/help', to: 'pages#help', via: 'get'
+  match '/about', to: 'pages#about', via: 'get'
+  match '/girls', to: 'user#girls', via:'get'
+  match '/boys', to: 'user#boys', via:'get'
+end
 Rails.application.routes.draw do
+  get 'user/new'
+
+  get 'user/girls'
+
+  get 'user/boys'
+
+  get 'pages/home'
+
+  get 'pages/picture'
+
+  get 'pages/invite'
+
+  get 'pages/wishes'
+
+  get 'pages/feedback'
+
+  get 'pages/help'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
