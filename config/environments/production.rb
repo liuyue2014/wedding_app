@@ -80,4 +80,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.assets.precompile +=%w(lightbox.css screen.css jquery-1.11.0.min.js lightbox.js lightbox.min.js)
 end
