@@ -3,9 +3,16 @@
 <head>
 	<meta charset="utf-8">
   <title> <%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag 'application', media:"all", "data-turbolinks-track"=>true %>
-  <%= javascript_include_tag 'application',"data-turbolinks-track"=>true %>
-  <!--- delete application because of using particular css or js for single network,missing befor true---->
+  <%=yield :csstag %>
+  <%=yield :jstag %>
+  <%= stylesheet_link_tag  "customer"%>
+  <%= javascript_include_tag "jquery-1.11.0.min" %>
+  <%= javascript_include_tag "jquery_ujs" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "prototype" %>
+  <!--- delete application because of using particular css or js for single network,missing befor true>
+  <!%= stylesheet_link_tag 'application', media:"all", "data-turbolinks-track"=>true %>
+  <!%= javascript_include_tag 'application',"data-turbolinks-track"=>true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
