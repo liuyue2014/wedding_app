@@ -1,10 +1,11 @@
 @import "bootstrap";
+$backcolor: #065279;
 html {
   overflow-y: scroll;
  }
 body {
-  padding-top: 160px;
- /* color: #00008B;*/
+  padding-top: 90px;
+  background-color: $backcolor;
 }
 section {
   overflow: auto;
@@ -14,19 +15,26 @@ textarea {
 }
 .center {
   text-align: center;
-  background-color:#fff;
+  background-color:$backcolor;
 }
 .center h1{
-  margin-bottom:10px;
+  color:#fff;
+  margin-bottom:40px;
 }
+/*.container {
+  color:#003472;
+  background-color:#fff;
+}*/
 h1,h2,h3,h4,h5,h6 {
   line-height: 1;
+  color:#fff;
 }
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color:#fff;
 }
 h2 {
   font-size: 1.2em;
@@ -34,11 +42,18 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: #fff;
+}
+h2 a{
+  color:#808080;
+}
+h2 a:hover {
+  color: #fff;
 }
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color:#fff;
 }
 #logo {
   float: left;
@@ -59,7 +74,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  #border-top: 1px solid #eaeaea;
   color: #999;
 }
 
@@ -70,7 +85,8 @@ footer a:hover {
   color: #222;
 }
 footer small{
-  float: left;
+  #float: left;
+  float: right;
 }
 footer ul{
   float:right;
@@ -91,4 +107,52 @@ footer ul li{
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+/* forms */
+input,textarea,select,.uneditable-input {
+  border:1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+input {
+  height: auto !important;
+}
+.sign {
+  text-align: center;
+}
+.imgself {
+  padding-top: 90px;
+  text-align: center;
+}
+.invite {
+  padding-top: 30px;
+  text-align: center;
+}
+/* microposts */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+  color: #bacac6;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+  color: #fff;
+}
+.timestamp {
+  color: #999;
+}
+.gravatar {
+  float: left;
+  margin-right:10px;
+}
+aside {
+  textarea {
+    height:100px;
+    margin-bottom:5px;
+  }
 }

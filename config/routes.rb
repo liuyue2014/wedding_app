@@ -1,26 +1,35 @@
 WeddingApp::Application.routes.draw do
-  get 'user/new'
+  resources :users
+  resources :sessions, only:[:newgirl,:newboy,:create,:destroy]
+  resources :microposts
+ 
+  get 'users/new'
 
-  get 'user/girls'
+  get 'users/create'
 
-  get 'user/boys'
-
+  get 'users/update'
   root to: 'pages#home'
+  
   match '/picture', to: 'pages#picture', via: 'get'
   match '/invite', to: 'pages#invite', via: 'get'
   match '/wishes', to: 'pages#wishes', via: 'get'
   match '/feedback', to: 'pages#feedback', via: 'get'
   match '/help', to: 'pages#help', via: 'get'
   match '/about', to: 'pages#about', via: 'get'
-  match '/girls', to: 'user#girls', via:'get'
-  match '/boys', to: 'user#boys', via:'get'
+  match '/girls', to: 'sessions#newgirl', via:'get'
+  match '/boys', to: 'sessions#newboy', via:'get'
+  match '/signout', to: 'sessions#destroy', via:'delete'
+  match '/signout', to: 'sessions#destroy', via:'get'
+  match '/sessions', to: 'sessions#create', via:'get'
+  match '/signup', to: 'users#new', via:'get'
+  match '/thanks', to: 'pages#update', via: 'post'
+  match '/msgnew', to: 'microposts#create',via:'post'
+  match '/showpeople', to: 'pages#show', via:'get'
 end
 Rails.application.routes.draw do
-  get 'user/new'
+  get 'users/new'
 
-  get 'user/girls'
-
-  get 'user/boys'
+  get 'users/create'
 
   get 'pages/home'
 

@@ -1,2 +1,27 @@
-<h1>Pages#picture</h1>
-<p>Find me in app/views/pages/picture.html.erb</p>
+<% if signed_in?%>
+<% provide(:title,"我们的照片") %>
+<% content_for :csstag do %>
+  <%= javascript_include_tag "jquery-1.11.0.min" %>
+  <%= stylesheet_link_tag "lightbox"%>
+  <%= stylesheet_link_tag "screen"%>
+<% end %>
+<% content_for :jstag do%>
+  <%= javascript_include_tag "lightbox" %>
+  <%= javascript_include_tag "lightbox.min" %>
+<% end %>
+	<section id="examples" class="examples-section">
+		<div class="container">
+      <h1>我们的照片</h1>
+			<div class="image-row">
+				<div class="image-set">
+					<a class="example-image-link" href="/assets/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="/assets/thumb-3.jpg" alt=""/></a>
+					<a class="example-image-link" href="/assets/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="/assets/thumb-4.jpg" alt="" /></a>
+					<a class="example-image-link" href="/assets/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="/assets/thumb-5.jpg" alt="" /></a>
+					<a class="example-image-link" href="/assets/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="/assets/thumb-6.jpg" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</section>
+<% else %>
+  <%= render 'shared/signin_page' %>
+<% end %>

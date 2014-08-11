@@ -11,20 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731085156) do
+ActiveRecord::Schema.define(version: 20140811060114) do
 
-  create_table "user_logins", force: true do |t|
-    t.string   "name"
-    t.string   "password_digest"
+  create_table "microposts", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "match_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.integer  "person_num"
+    t.string   "whose"
   end
+
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

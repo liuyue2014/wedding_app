@@ -5,11 +5,14 @@
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path%></li>
-          <li><%= link_to "Pictures", picture_path%></li>
-          <li><%= link_to "Invitation", invite_path%></li>
-          <li><%= link_to "Wishes", wishes_path%></li>
-          <li><%= link_to "Feedback", feedback_path%></li>
-          <li><%= link_to "Help", help_path%></li>
+          <% if signed_in? %>
+            <li><%= link_to "Pictures", picture_path%></li>
+            <li><%= link_to "Invitation", invite_path%></li>
+            <li><%= link_to "Wishes", wishes_path%></li>
+            <li><%= link_to "Feedback", feedback_path%></li>
+            <li><%= link_to "Sign Out", signout_path, method: :delete,
+                                     data: {confirm: '确定退出吗？'} %></li>
+          <% end %>
         </ul>
       </nav>
       </div>

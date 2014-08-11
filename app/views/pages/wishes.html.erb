@@ -1,2 +1,20 @@
-<h1>Pages#wishes</h1>
-<p>Find me in app/views/pages/wishes.html.erb</p>
+<% if signed_in?%>
+<% provide(:title,"祝福墙") %>
+<h1>祝福墙</h1>
+<div class="row">
+  <div class="span8">
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+    <% if @microposts.any? %>
+      <h3>留言(<%= @microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  <%= render 'shared/signin_page' %>
+<% end %>
