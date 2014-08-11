@@ -1,13 +1,10 @@
 <% if signed_in?%>
 <% provide(:title,"我们的照片") %>
 <% content_for :csstag do %>
-  <%= javascript_include_tag "jquery-1.11.0.min" %>
   <%= stylesheet_link_tag "lightbox"%>
-  <%= stylesheet_link_tag "screen"%>
 <% end %>
 <% content_for :jstag do%>
   <%= javascript_include_tag "lightbox" %>
-  <%= javascript_include_tag "lightbox.min" %>
 <% end %>
 	<section id="examples" class="examples-section">
 		<div class="container">
