@@ -1,0 +1,24 @@
+<% if current_user.name=="Admin" %>
+  <table class="table">
+   <caption>能够出席的人数</caption>
+    <thead>
+      <tr>
+        <th>名字</th>
+        <th>出席人数</th>
+        <th>新郎or新娘</th>
+        <th>更新时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users = User.all %>
+      <% users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.person_num %></td>
+          <td><%= user.whose %></td>
+          <td><%= user.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

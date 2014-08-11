@@ -1,0 +1,15 @@
+<li>
+  <span class="content"><%= micropost.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+  </span>
+  <span class="user"> From <%= micropost.user.name %></span>
+  <p><%=current_user%>留言i<%=micropost.user%></p> 
+  <p><%=current_user.id%>留言i<%=micropost.user.id%></p> 
+  <p><%=current_user.name%>留言i<%=micropost.user.name%></p> 
+  <% if current_user?(micropost.user) %>
+    <% link_to "删除", micropost, method: :delete,
+                                  data: {confirm: "确定删除此条留言？"},
+                                  title: micropost.content %>
+  <% end %>
+</li>

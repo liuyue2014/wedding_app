@@ -1,0 +1,41 @@
+<% if signed_in?%>
+<% provide(:title,"邀请") %>
+<h1>邀请</h1>
+<!div class="invite">
+
+<div class="row">
+  <div class="span6 offset3">
+    <p><b>【时间】 </b>2014年8月31日 周日 11:30</p>
+    <p><b>【地点】 </b>
+		   眉州东坡（中关村店） 二楼
+    </p>
+    <p><b>【流程】 </b><br></p>
+  </div>
+  <div class="span6 offset4">
+    <p> 1.介绍来宾，感谢致辞；<br>
+          2.吃！吃！吃！<br>
+          3.动画放映——我俩的故事；<br>
+          4.好友讲故事——你认识的新郎新娘。</p>
+  </div>
+  <div class="span6 offset3">
+    <p>O 很喜欢这样的场景，大家围坐在草地上，有人拿起酒杯说，来，我讲个故事。<br>
+    O 主旋律是搞笑，大家尽量控制感情，咱少煽情。<br>
+    O 主要是爆料某男的糗事，吐槽某男的；赞美某女的机智勇敢、聪明善良。如果你想讲讲你眼中我俩的故事那就更好了。</p>
+    <p><b>【请回复】 <b></p>
+    <%= form_for(:user, url: thanks_path ) do |f|%>
+      <%= f.select :person_num,
+          [["抱歉我无法参加",0],["我自己参加",1],["我会带家属参加",2]],
+          :prompt=>"请选择"%>
+      <%= f.submit "提交", class:"btn btn-large btn-primary" %>
+    <% end %>
+    <p>8月25日左右将更新座位图，敬请关注！</p>
+  </div>
+</div>
+<div class="invite">
+  <h2>提示：酒店地点及地图请点击“
+    <a href="http://www.dianping.com/shop/515636" >眉州东坡（中关村店） 二楼</a>
+  ”链接！</h2>
+</div>
+<% else %>
+  <%= render 'shared/signin_page' %>
+<% end %>

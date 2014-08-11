@@ -1,0 +1,23 @@
+<% if signed_in?%>
+<% provide(:title,"欢迎") %>
+<% if current_user.person_num > 0 %>
+  <h1>肉香香的，酒足足的，期待你的到来！</h1>
+  <div class="imgself">
+    <img alt="smile" src="/assets/smile.jpg" />
+  </div>
+  <div class="imgself">
+    <h1>来吧</h1>
+    <img alt="come on" src="/assets/eat.jpg" />
+  </div>
+
+<% else %>
+  <h1>打滚哭~~请我们吃饭就原谅你！嗯。</h1>
+  <div class="imgself">
+    <img alt="cry" src="/assets/cry1.jpg" />
+  </div>
+<% end %>
+<% else %>
+  <%= render 'shared/signin_page' %>
+<% end %>
+
+

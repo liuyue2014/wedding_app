@@ -1,0 +1,16 @@
+<li id="<%= feed_item.id %>">
+  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+    <span class="user">
+      <%= link_to feed_item.user.name, feed_item.user %>
+    </span>
+    <span class="content"><%= micropost.content %></span>
+    <span class="timestamp">
+       Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    </span>
+    <span class="user"> From <%= micropost.user.name %></span>
+  <% if current_user?(micropost.user) %>
+    <% link_to "删除", micropost, method: :delete,
+                                  data: {confirm: "确定删除此条留言？"}
+                                  title: micropost.content %>
+  <% end %>
+</li>
