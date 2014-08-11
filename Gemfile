@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+gem 'heroku'
 # Use sqlite3 as the database for Active Record
 gem 'acts_as_commentable'
 gem 'bootstrap-sass','2.3.2.0'
