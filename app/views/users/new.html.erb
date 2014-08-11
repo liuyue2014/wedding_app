@@ -3,9 +3,14 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f|%>
-      <%= render 'shared/error_messages' %>
+      <%#=render 'shared/error_messages' %>
       <%= f.label :name %>
       <%= f.text_field :name %>
+
+      <%= f.label :whose %>
+      <%= f.select :whose,
+          [["新娘亲友团","girl"],["新郎亲友团","boy"]],
+          :prompt=>"请选择"%>
 
       <%= f.label :password%>
       <%= f.password_field :password %>

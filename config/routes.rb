@@ -22,6 +22,7 @@ WeddingApp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via:'get'
   match '/sessions', to: 'sessions#create', via:'get'
   match '/signup', to: 'users#new', via:'get'
+  match '/signup', to: 'users#new', via:'post'
   match '/thanks', to: 'pages#update', via: 'post'
   match '/msgnew', to: 'microposts#create',via:'post'
   match '/showpeople', to: 'pages#show', via:'get'
