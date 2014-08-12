@@ -91,9 +91,9 @@ body:after {
   z-index: 10;
 }
 
-.lb-container > .nav {
+/*.lb-container > .nav {
   left: 0;
-}
+}*/
 
 .lb-nav a {
   outline: none;
