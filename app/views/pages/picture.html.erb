@@ -6,8 +6,9 @@
 <% content_for :jstag do%>
   <%= javascript_include_tag "lightbox" %>
 <% end %>
-	<section id="examples" class="examples-section">
       <h1>我们的照片</h1>
+	<section id="examples" class="examples-section">
+	  <div class="container">
 			<div class="image-row">
 				<div class="image-set">
 					<a class="example-image-link" href="/assets/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="/assets/thumb-3.jpg" alt=""/></a>
@@ -16,6 +17,7 @@
 					<a class="example-image-link" href="/assets/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="/assets/thumb-6.jpg" alt="" /></a>
 				</div>
 			</div>
+	  </div>
 	</section>
 <% else %>
   <%= render 'shared/signin_page' %>

@@ -1,4 +1,4 @@
-article,aside,details,figcaption,figure,hgroup,main,section,summary{display:block}
+article,aside,details,figcaption,figure,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
 [hidden]{display:none}
@@ -38,7 +38,9 @@ cite{color:#bbb}
 p{margin:0 auto 2em auto;text-align:left}
 .lead{max-width:45rem;font-size:1.25rem}
 ol{list-style-type:decimal}
-ol{margin:0 0 1.25em 0}
+ul,ol{margin:0 0 1.25em 0}
+li{margin-bottom:2em}
+li.last-list-item{border-bottom:none}
 dt{font-weight:bold}
 dd{margin-bottom:1.625em}
 strong{font-weight:bold}
@@ -60,7 +62,7 @@ section:first-of-type{border-top:none}
 .example-image-link{display:inline-block;padding:4px;margin:0 0.5rem 1rem 0.5rem;background-color:#fff;line-height:0;-webkit-transition:background-color 0.1s ease-out;-moz-transition:background-color 0.1s ease-out;-o-transition:background-color 0.1s ease-out;transition:background-color 0.1s ease-out;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;border-radius:6px}
 .example-image-link:hover{background-color:#4ae}
 .example-image{width:7rem;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px}
-.how-to-use-section p,.how-to-use-section ol,.how-to-use-section pre{text-align:left}
+.how-to-use-section p,.how-to-use-section ol,.how-to-use-section ul,.how-to-use-section pre{text-align:left}
 fieldset{border:none}
 .donate-button{width:100%}
 @media (min-width: 40rem){.donate-button{width:auto}
@@ -77,6 +79,9 @@ pre code{padding:0;font-size:0.7rem;border:none}
 .column.third{width:33.3%}
 .column.fourth{width:24.95%}
 .column.flow-opposite{float:right}
+}
+ul{margin:0;text-align:left}
+@media (min-width: 40rem){ul{display:inline-block}
 }
 .button{display:block;padding:0.7rem 2rem;margin-bottom:0.5rem;border:none;color:#fff;background-color:#4ae;font-size:1.2rem;font-weight:bold;text-transform:uppercase;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;border-radius:6px;vertical-align:middle;white-space:nowrap}
 .button:hover{background:#1595ea;text-decoration:none}
